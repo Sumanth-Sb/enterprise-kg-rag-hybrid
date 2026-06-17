@@ -111,31 +111,76 @@ User Query
 
 ## 5. Evaluation
 
-| Metric | Phase 1 | Phase 2 | Phase 3 | Phase 4 |
-|--------|--------|--------|--------|--------|
-| Retrieval Accuracy | Medium | High | Higher | Highest |
-| Reasoning Capability | Low | Medium | High | Very High |
-| Explainability | Low | High | High | Very High |
-| Hallucination Rate | High | Medium | Low | Very Low |
-| Multi-step Reasoning | No | Limited | Yes | Advanced |
+### 5.1 Retrieval Quality (IR Metrics)
+
+| Metric      | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Description |
+|-------------|--------|--------|--------|--------|-------------|
+| Precision@K | Baseline | Improved | High | Very High | Relevance of top-K retrieved results |
+| Recall@K    | Medium | High | High | Very High | Coverage of relevant documents |
+| MRR         | Low | Medium | High | Very High | Ranking quality of first relevant result |
+| nDCG        | Low | Medium | High | Very High | Position-aware ranking effectiveness |
+
+---
+
+### 5.2 Generation Quality (LLM Metrics)
+
+| Metric              | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Description |
+|---------------------|--------|--------|--------|--------|-------------|
+| Faithfulness Score  | Low    | Medium | High   | Very High | Grounding in retrieved context |
+| Answer Relevance    | Medium | High   | High   | Very High | Semantic alignment with query |
+| Context Utilization | Low    | Medium | High   | Very High | Effective use of retrieved data |
+| Hallucination Rate  | High   | Medium | Low    | Very Low  | Unsupported content generation |
+
+---
+
+### 5.3 System Performance Metrics
+
+| Metric           | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Description |
+|------------------|--------|--------|--------|--------|-------------|
+| Latency          | Low    | Medium | Medium | High | End-to-end response time |
+| Throughput (QPS) | High   | High   | Medium | Medium | Queries processed per second |
+| Cost per Query   | Low    | Medium | Medium | High | Compute + LLM + tool cost |
+| Failure Rate     | Medium | Medium | Low    | Low | System-level failure rate |
+
+---
+
+### 5.4 Agentic System Metrics (Phase 4)
+
+| Metric                  | Trend     | Description |
+|-------------------------|----------|-------------|
+| Tool Call Success Rate  | High     | Success of external tool execution |
+| Planning Accuracy       | High     | Correctness of agent planning decisions |
+| Multi-step Completion   | High     | Ability to complete complex workflows |
+| Self-Validation Rate    | Very High | Frequency of corrected outputs |
+
+---
+
+### 5.5 Overall System Improvement
+
+| Capability Area   | Phase 1 | Phase 2 | Phase 3 | Phase 4 |
+|------------------|--------|--------|--------|--------|
+| Retrieval Quality | Baseline | Improved | Strong | Best |
+| Reasoning Ability  | None    | Limited  | Strong | Autonomous |
+| Explainability    | Low     | High     | High   | Very High |
+| Robustness        | Low     | Medium   | High   | Very High |
 
 ---
 
 ## 6. Limitations
 
-- Knowledge graph quality depends on entity extraction performance
-- Hybrid retrieval introduces additional latency
-- Agent systems require strict guardrails to avoid tool misuse
-- Memory management becomes critical for long-context workflows
+- Knowledge graph quality depends on entity extraction accuracy
+- Hybrid retrieval increases system latency
+- Agentic systems require strict guardrails for tool usage
+- Memory management becomes critical for long-context reasoning
 
 ---
 
 ## 7. Future Enhancements
 
-- Graph Neural Networks for reasoning over knowledge graphs (not done due to resource crunch)
+- Graph Neural Network-based reasoning over knowledge graphs
 - Real-time streaming knowledge graph updates
-- Multi-modal ingestion (PDFs, images, structured tables)
+- Multi-modal ingestion (text, PDFs, images, structured tables)
 - Reinforcement learning-based agent optimization
-- Self-improving retrieval ranking mechanisms
+- Self-improving retrieval ranking systems
 
 ---
