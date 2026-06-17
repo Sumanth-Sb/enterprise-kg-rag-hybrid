@@ -127,8 +127,3 @@ Final Explainable Answer
 - Phase 2: Neo4j + NER
 - Phase 3: Hybrid RAG
 - Phase 4: LangGraph + LLM Agents
-
-
----
-
-# 📁 REPO STRUCTURE
