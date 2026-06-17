@@ -184,3 +184,5 @@ User Query
 - Self-improving retrieval ranking systems
 
 ---
+
+Note - Implemented Using FinBERT for Finance and BioBERT for Pharma
