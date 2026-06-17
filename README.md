@@ -1,129 +1,141 @@
-# Enterprise Knowledge Intelligence System (RAG → KG → Agentic AI)
+# Enterprise Knowledge Intelligence System (RAG → KG → Hybrid → Agentic AI)
 
-This project demonstrates the evolution of enterprise AI systems across 4 phases:
+## 1. Problem Statement
 
-# Phase 1 — Vector-Based RAG System (Baseline)
+Enterprise knowledge exists across unstructured documents, structured databases, and semi-structured systems. Traditional retrieval systems are unable to:
 
-## Architecture
-User Query
-   ↓
-Embedding Model (SBERT)
-   ↓
-Vector Database (FAISS)
-   ↓
-Top-K Retrieval
-   ↓
-LLM Response Generator
+- Perform multi-step reasoning across sources
+- Capture relationships between entities
+- Provide explainable and traceable outputs
+- Maintain consistency across complex queries
 
-## Features
-- Semantic search
-- Document chunking
-- Basic RAG pipeline
+This leads to hallucinated outputs, incomplete retrieval, and poor decision support in enterprise AI systems.
 
-## Limitations
-- No reasoning
-- No relationships
-- Hallucination risk
+---
+
+## 2. System Overview
+
+This system is designed as an evolutionary AI architecture that progresses through four stages:
+
+Vector-based retrieval → Knowledge graph reasoning → Hybrid intelligence → Agent-based autonomous reasoning
+
+Each stage improves retrieval quality, reasoning depth, and explainability.
+
+---
+
+## 3. Architecture
+
+### Phase 1 — Vector-Based RAG System
+
+User Query  
+→ Text Embedding (SBERT)  
+→ Vector Database (FAISS)  
+→ Top-K Similarity Search  
+→ Context Assembly  
+→ LLM Response Generation  
+
+**Limitations**
+- No structural reasoning
+- No relationship awareness
+- High hallucination risk
 - No explainability
 
 ---
 
-# Phase 2 — Knowledge Graph Intelligence Layer
+### Phase 2 — Knowledge Graph Intelligence Layer
 
-## Architecture
-Documents → Entity Extraction (NER)
-        ↓
-Knowledge Graph (Neo4j)
-        ↓
-Cypher Query Engine
-        ↓
-Relationship-Based Retrieval
+Documents  
+→ Entity Extraction (NER)  
+→ Graph Construction (Neo4j)  
+→ Cypher Query Engine  
+→ Relationship-Based Retrieval  
 
-## Features
-- Entity linking
-- Graph construction
-- Relationship traversal
-- Structured knowledge storage
+**Capabilities**
+- Structured entity representation
+- Relationship-aware retrieval
+- Deterministic query paths
 
-## Improvement
-- +30% contextual accuracy vs Phase 1
+**Limitations**
+- Dependency on extraction quality
+- Limited semantic generalization
 
 ---
 
-# Phase 3 — Hybrid RAG + Knowledge Graph System
+### Phase 3 — Hybrid RAG + Knowledge Graph System
 
-## Architecture
-User Query
-   ↓
-Vector Search (FAISS)
-   ↓
-Graph Retrieval (Neo4j)
-   ↓
-Fusion Layer (Ranking + Weighting)
-   ↓
-LLM Reasoning Engine
-   ↓
-Final Answer + Sources
+User Query  
+→ Vector Search (FAISS)  
+→ Graph Traversal (Neo4j)  
+→ Fusion Layer (Ranking + Weighting)  
+→ Context Builder  
+→ LLM Reasoning Engine  
+→ Final Answer with Sources  
 
-## Features
+**Capabilities**
+- Combines semantic + structured retrieval
 - Multi-hop reasoning
-- Hybrid retrieval
-- Source grounding
-- Confidence scoring
-
-## Improvement
-- +45% answer relevance
-- 85–90% traceable outputs
+- Improved grounding and traceability
 
 ---
 
-# Phase 4 — Agentic Knowledge Intelligence System
+### Phase 4 — Agentic Knowledge Intelligence System
 
-## Architecture
-User Query
-   ↓
-Planner Agent (LangGraph)
-   ↓
-┌────────────────────────────┐
-│ Tool Selection Layer       │
-│ - Vector Search Agent      │
-│ - Graph Query Agent        │
-│ - Web Research Agent       │
-└────────────────────────────┘
-   ↓
-Reasoning Agent (LLM)
-   ↓
-Validation Agent
-   ↓
-Final Explainable Answer
+User Query  
+→ Planner Agent (LangGraph)  
+→ Tool Selection Layer  
+   → Vector Search Agent  
+   → Knowledge Graph Agent  
+   → Web Search Agent  
+→ Reasoning Agent (LLM)  
+→ Validation Agent  
+→ Memory Update  
+→ Final Response  
 
-## Features
+**Capabilities**
 - Multi-agent orchestration
-- Tool usage (SQL, KG, Vector DB)
+- Dynamic tool selection
 - Self-validation loop
-- Memory persistence
-
-## Final Outcome
-- Enterprise-grade AI system
-- Explainable + traceable decisions
-- Reduced hallucination significantly
+- Persistent memory handling
+- Multi-step reasoning
 
 ---
 
-# FINAL BUSINESS IMPACT
+## 4. Design Decisions
 
-| Phase | Capability | Business Value |
-|------|------------|---------------|
-| P1 | Search only | Basic retrieval |
-| P2 | Structured knowledge | Better context |
-| P3 | Hybrid intelligence | Accurate reasoning |
-| P4 | Autonomous system | Decision automation |
+- Vector databases are used for semantic similarity in unstructured data
+- Knowledge graphs provide deterministic relationship reasoning
+- Hybrid fusion improves retrieval robustness across modalities
+- Agent architecture enables autonomous reasoning and tool execution
 
 ---
 
-# TECH STACK 
+## 5. Evaluation
 
-- Phase 1: FAISS + SBERT
-- Phase 2: Neo4j + NER
-- Phase 3: Hybrid RAG
-- Phase 4: LangGraph + LLM Agents
+| Metric | Phase 1 | Phase 2 | Phase 3 | Phase 4 |
+|--------|--------|--------|--------|--------|
+| Retrieval Accuracy | Medium | High | Higher | Highest |
+| Reasoning Capability | Low | Medium | High | Very High |
+| Explainability | Low | High | High | Very High |
+| Hallucination Rate | High | Medium | Low | Very Low |
+| Multi-step Reasoning | No | Limited | Yes | Advanced |
+
+---
+
+## 6. Limitations
+
+- Knowledge graph quality depends on entity extraction performance
+- Hybrid retrieval introduces additional latency
+- Agent systems require strict guardrails to avoid tool misuse
+- Memory management becomes critical for long-context workflows
+
+---
+
+## 7. Future Enhancements
+
+- Graph Neural Networks for reasoning over knowledge graphs (not done due to resource crunch)
+- Real-time streaming knowledge graph updates
+- Multi-modal ingestion (PDFs, images, structured tables)
+- Reinforcement learning-based agent optimization
+- Self-improving retrieval ranking mechanisms
+
+---
